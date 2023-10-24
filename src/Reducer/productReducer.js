@@ -1,18 +1,18 @@
-const productReducer = (state, action) => {
-  /* if (action.type === "SET_LOADING") {
-    return {
-      ...state,
-      isLoading: true,
-    };
-  }
+const ProductReducer = (state, action) => {
+  // if (action.type === "SET_LOADING") {
+  //   return {
+  //     ...state,
+  //     isLoading: true,
+  //   };
+  // }
 
-  if (action.type === "API_ERROR") {
-    return {
-      ...state,
-      isLoading: false,
-      isError: true,
-    };
-  } */
+  // if (action.type === "API_ERROR") {
+  //   return {
+  //     ...state,
+  //     isLoading: false,
+  //     isError: true,
+  //   };
+  // }
 
   switch (action.type) {
     case "SET_LOADING":
@@ -29,7 +29,7 @@ const productReducer = (state, action) => {
       return {
         ...state,
         isLoading: false,
-        products: action,
+        products: action.payload,
         featureProducts: featureData,
       };
 
@@ -53,7 +53,7 @@ const productReducer = (state, action) => {
         singleProduct: action.payload,
       };
 
-    case "SINGLE_ERROR":
+    case "SET_SINGLE_ERROR":
       return {
         ...state,
         isSingleLoading: false,
@@ -65,4 +65,4 @@ const productReducer = (state, action) => {
   }
 };
 
-export default productReducer;
+export default ProductReducer;
